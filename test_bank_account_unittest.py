@@ -9,10 +9,11 @@ class BankAccountTest(unittest.TestCase):
     """Unit tests of the Bank Account class."""
 
     def setUp(self):
-        """Create a test fixture for use in tests."""
+        """Create a test fixture for use in tests.
+
+        Must be named setUp."""
         self.account1 = BankAccount("My Bank Account")
         self.check1 = Check("My Bank Account", 10000.0)
-        self.check2 = Check("Bank Account", 500.0)
 
     def test_deposit_cash(self):  #
         """Deposit cash correctly adds to balance and available balance."""
@@ -100,3 +101,10 @@ class BankAccountTest(unittest.TestCase):
         """Cannot deposit check with different payee."""
         with self.assertRaises(CheckError):
             self.account1.deposit(self.check2)
+
+    def tearDown(self):
+        """Remove the test fixture.
+
+        Must be named tearDown."""
+        self.account1 = None
+        self.check1 = None
