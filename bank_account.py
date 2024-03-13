@@ -23,7 +23,7 @@ class BankAccount:
         :min_balance: the minimum required balance, a non-negative number.
                 Default min balance is zero.
         """
-        # you don't need to test min_balance < 0. It's too trivial.
+        # you don't need to test_testify min_balance < 0. It's too trivial.
         assert min_balance >= 0, "min balance parameter must not be negative"
         self.__name = name
         self.__balance = 0.0
