@@ -3,7 +3,6 @@ from bank_account import BankAccount
 from check import Check
 from money import Money
 
-
 from testify import TestCase, setup, teardown, assert_equal, run
 
 
@@ -30,7 +29,8 @@ class BankAccountTest(TestCase):
     def tearDown(self):
         """Remove the test fixture.
 
-        Can be any name method but should be decorated with teardown.
+        ensuring that the test environment is reset to a known state before
+        the next test method is run.
         """
         self.account1 = None
         self.check1 = None

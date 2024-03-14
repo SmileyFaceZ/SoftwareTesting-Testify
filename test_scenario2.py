@@ -16,7 +16,7 @@ class BankAccountTest(TestCase):
         self.account1 = BankAccount("My Bank Account")
         self.check1 = Check("My Bank Account", 10000.0)
 
-    def test_overwithdraw(self):
+    def test_over_withdraw(self):
         """Cannot withdraw more than the balance in account."""
         self.account1.deposit(Money(1000.0))
         withdrawal = self.account1.withdraw(1.0)
